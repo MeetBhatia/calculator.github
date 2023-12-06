@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            padding-left: 30%;
+            padding-top: 5%;
+            background-image: linear-gradient(to right, gray,black,gray);
+        }
+
+        #big{
+            background-color: #fcfefe;
+            width: 500px;
+            height: 500px;
+            border-radius: 10px;
+            
+        }
+        #screen{
+            background-color:#233142;
+            height: 100px;
+            width: 450px;
+            margin-left:20px ;
+            margin-top: 10px;
+            border-radius: 10px;
+            font-size: 50px;
+           font-family:'Times New Roman', Times, serif;
+            color: white;
+            text-align: right;
+        }
+        #number{
+            height: 70px;
+            width: 75px;
+            background-color: #233142;
+            margin-left: 40px;
+            margin-top: 15px;
+            border-radius: 10px;
+            padding: 0%;
+            font-family:'Times New Roman', Times, serif;
+            color: white;
+            font-size: 50px;
+        }
+       #number:hover{
+        background-color:#455d7a;
+       }
+        #firstrow,#secondrow,#thirdrow,#fourthrow{
+            display: inline-flex;
+            position: relative;
+
+            
+        }
+      
+      
+    </style>
+</head>
+<body>
+    <div id="big">
+        <input  id="screen" type="" readonly><br><br>
+        <div id="firstrow">
+            <input id="number" type="button" value="7" onclick="task('7')">
+            <input id="number" type="button" value="8" onclick="task('8')">
+            <input id="number" type="button" value="9" onclick="task('9')">
+            <input id="number" type="button" value="+" onclick="task('+')">
+      </div>
+      <div id="secondrow">
+            <input id="number" type="button" value="4" onclick="task('4')">
+            <input id="number" type="button" value="5" onclick="task('5')">
+            <input id="number" type="button" value="6" onclick="task('6')">
+            <input id="number" type="button" value="-" onclick="task('-')">
+      </div>
+      <div id="thirdrow">
+            <input id="number" type="button" value="1" onclick="task('1')">
+            <input id="number" type="button" value="2" onclick="task('2')">
+            <input id="number" type="button" value="3" onclick="task('3')">
+            <input id="number" type="button" value="*" onclick="task('*')">
+      </div>
+      <div id="fourthrow">
+        <input id="number" type="button" value="0" onclick="task('0')">
+        <input id="number" type="button" value="C" onclick="clearall()">
+        <input id="number" type="button" value="=" onclick="equal()">
+        <input id="number" type="button" value="/" onclick="task('/')">
+      </div>
+   
+      
+    </div>
+</body>
+<script>
+    function task(a){
+     
+    document.getElementById("screen").value +=(a)
+    }
+    function equal(){
+       
+let ans=document.getElementById("screen").value
+let final=eval(ans)
+document.getElementById("screen").value=(final)
+    }
+    function clearall(){
+        document.getElementById("screen").value=""
+    }
+</script>
+</html>
